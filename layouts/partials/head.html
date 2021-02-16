@@ -26,6 +26,9 @@
     <link rel="stylesheet" href="{{ . | absURL }}">
     {{ end }}
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
+    {{ if .Params.use_jqcloud }}
+    <link rel="stylesheet" href="https://golangkorea.github.io/js/jqcloud/jqcloud.min.css">
+    {{ end }}
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     {{ template "_internal/opengraph.html" . }}
     {{ template "_internal/google_news.html" . }}
@@ -53,7 +56,11 @@
     {{- end }}
 
     <!-- needs to be loaded first for following scripts -->
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    {{ if .Params.use_jqcloud }}
+    <script src="https://golangkorea.github.io/js/jqcloud/jqcloud.min.js"></script>
+    {{ end }}
 </head>
 <body>
 <div class="container">
