@@ -6,7 +6,7 @@
         {{ with .Site.Data.l10n.widgets.tags.title }}{{.}}{{end}}
     </h3>
 
-{{ if .Params.use_jqcloud }}    
+{{ if .Site.Params.use_jqcloud }}
     <div style="width:90%; min-height:300px" id="tags-cloud"></div>
 {{ else }}
     {{ if not (eq (len $.Site.Taxonomies.tags) 0) }}
@@ -39,7 +39,7 @@
 
 </div>
 
-{{ if .Params.use_jqcloud }}
+{{ if .Site.Params.use_jqcloud }}
 <script type="text/javascript">
 
     $(document).ready(function() {
