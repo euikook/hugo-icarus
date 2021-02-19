@@ -5,7 +5,7 @@
     </h3>
     <div class="widget">
       <ul id="recent-post">
-            {{ range first 5 .Site.RegularPages.ByPublishDate.Reverse }}
+            {{ range first 5 .Site.RegularPages.ByLastmod.Reverse }}
             <li>
                 <div class="item-thumbnail">
                     <a href="{{ .Permalink }}" class="thumbnail">
