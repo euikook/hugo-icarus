@@ -8,8 +8,11 @@
 
         {{ if not .Params.nodateline }}
         <div class="article-date">
-            <i class="fa fa-calendar"></i>
-            <time datetime="{{ .Date }}" itemprop="datePublished">{{ .Date.Format .Site.Params.date_format }}</time>
+            <i class="fa fa-tag"></i>
+            <time datetime="{{ .Date }}" itemprop="datePublished" title="Published Date">{{ .Date.Format .Site.Params.date_format }}</time>
+            &middot;
+            <i class="fa fa-edit"></i>
+            <time datetime="{{ .Lastmod }}" itemprop="dateModified" title="Latest Modified Date">{{ .Lastmod.Format .Site.Params.date_format }}</time>
             &middot;
             {{ .WordCount }}
             {{ with .Site.Data.l10n.articles.words }}{{.}}{{end}}
