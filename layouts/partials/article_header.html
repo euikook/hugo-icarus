@@ -18,7 +18,9 @@
             {{ with .Site.Data.l10n.articles.words }}{{.}}{{end}}
             &middot;
             {{ .ReadingTime }}
-            {{ with .Site.Data.l10n.articles.readingtime }}{{.}}{{end}}
+            {{ with .Site.Data.l10n.articles.readingtime }}{{.}}{{end}}    
+            &middot;
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" style="vertical-align:middle"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
         </div>
         {{ end }}
         {{ if isset .Params "categories" }}
@@ -34,7 +36,7 @@
             </div>
             {{ end }}
         {{ end }}
-
+        
         {{ if isset .Params "tags" }}
             {{ $tagsLen := len .Params.tags }}
             {{ if gt $tagsLen 0 }}

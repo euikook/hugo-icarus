@@ -1,4 +1,7 @@
 <footer class="article-footer">
+
+{{ partial "license" . }}
+
     <a data-url="{{ .Permalink }}" data-id="{{ .File.UniqueID }}" class="article-share-link">
         <i class="fa fa-share"></i>
         {{with .Site.Data.l10n.articles.share}}{{.}}{{end}}
