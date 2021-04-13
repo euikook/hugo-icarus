@@ -17,9 +17,12 @@
                 {{ .Render "summary" }} 
                 {{ partial "adsense/tags" . }}
             {{ end }}
+            {{ .Scratch.Delete "index" }}
+            {{ partial "adsense/tags" . }}
         </div>
+
     </section>
-    {{ partial "adsense/tags" . }}
+    
     {{ partial "pagination" . }}
     {{ end }}
 {{ end }}
