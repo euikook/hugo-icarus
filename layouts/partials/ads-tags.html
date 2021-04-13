@@ -1,21 +1,17 @@
 {{ $rate := 3 }}
 
 {{ $index := .Scratch.Get "index" | default 0}}
-
-{{ with .Site.Params.adsense.id }}
 {{ if mod $index $rate | eq 0 }}
-
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
+     style="display:block;margin-bottom:15px"
      data-ad-format="fluid"
+     data-ad-layout-key="-h2-k+32-9i+ay"
      data-ad-client="ca-pub-1494649960951277"
-     data-ad-slot="1733115775"></ins>
+     data-ad-slot="5309414610"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-{{ end }}
 {{ end }}
