@@ -15,10 +15,11 @@
                 {{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}
                 {{ .Scratch.Set "index" ($.Scratch.Get "index") }}
                 {{ .Render "summary" }} 
-                {{ partial "ads-tags" . }}
+                {{ partial "adsense/tags" . }}
             {{ end }}
         </div>
     </section>
+    {{ partial "adsense/tags" . }}
     {{ partial "pagination" . }}
     {{ end }}
 {{ end }}

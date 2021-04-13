@@ -8,6 +8,9 @@
         <div class="article-entry" itemprop="articleBody">
             {{ .Content }}
         </div>
+
+        {{ partial "adsense/post" . }}
+
         {{ partial "article_footer" . }}
 
         {{ partial "utterances" . }}
