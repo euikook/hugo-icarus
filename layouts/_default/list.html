@@ -10,8 +10,12 @@
         </div>
         <div class="archives">
             {{ $paginator := .Paginate .Data.Pages.ByLastmod.Reverse }}
+            {{ .Scratch.Set "index" 0 }}
             {{ range $paginator.Pages }}
+                {{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}
+                {{ .Scratch.Set "index" ($.Scratch.Get "index") }}
                 {{ .Render "summary" }} 
+                {{ partial "ads-tags" . }}
             {{ end }}
         </div>
     </section>

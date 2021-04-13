@@ -1,5 +1,8 @@
 {{ $paginator := .Paginate (where .Site.RegularPages.ByLastmod.Reverse "Type" "in" .Site.Params.mainSections) }}
+{{ .Scratch.Set "index" 0 }}
 {{ range $paginator.Pages }}
+{{ $.Scratch.Set "index" (add ($.Scratch.Get "index") 1) }}
+{{ .Scratch.Set "index" ($.Scratch.Get "index") }}
 <article class="article article-type-post" itemscope="" itemprop="blogPost">
     <div class="article-inner">
         {{ if and (isset .Params "banner") (not (eq .Params.banner "")) }}
@@ -21,7 +24,9 @@
         </div>
         {{ partial "article_footer" . }}
     </div>
+    {{ partial "ads-main" . }}
 </article>
 {{ end }}
+
 
 {{ partial "pagination" . }}
