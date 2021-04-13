@@ -18,7 +18,7 @@
                 {{ partial "adsense/tags" . }}
             {{ end }}
 
-            {{ .Scratch.Set "index" (add .Scratch.Get "index") 1) }}
+            {{ .Scratch.Set "index" (add (.Scratch.Get "index") 1) }}
             {{ partial "adsense/tags" . }}
         </div>
 
