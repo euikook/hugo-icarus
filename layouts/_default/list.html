@@ -17,7 +17,8 @@
                 {{ .Render "summary" }} 
                 {{ partial "adsense/tags" . }}
             {{ end }}
-            {{ .Scratch.Delete "index" }}
+
+            {{ .Scratch.Set "index" (add .Scratch.Get "index") 1) }}
             {{ partial "adsense/tags" . }}
         </div>
 
